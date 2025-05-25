@@ -1,0 +1,412 @@
+/* RESET BÁSICO Y FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    /* Paleta de colores ajustada de imagecolorpicker.com */
+    --color-primario: #B80F0A; /* Rojo oscuro e intenso - para acentos y agresividad */
+    --color-secundario: #121212; /* Negro muy oscuro - para fondos principales */
+    --color-terciario: #282828; /* Gris oscuro - para secciones alternas y elementos */
+    --color-detalles: #616161; /* Gris medio - para bordes sutiles o texto secundario */
+    --color-texto-claro: #F0F0F0; /* Blanco roto - para texto principal sobre fondos oscuros */
+    --color-texto-oscuro: #0A0A0A; /* Casi negro - si necesitas texto en fondos claros (raro en este diseño) */
+
+    --fuente-titulo: 'Oswald', sans-serif;
+    --fuente-cuerpo: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    line-height: 1.6;
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+.contenedor-header, .seccion, .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8C0B08; /* Un tono de rojo ligeramente más oscuro al pasar el ratón */
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-texto-claro);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-primario);
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+---
+
+/* ENCABEZADO */
+header {
+    background-color: var(--color-terciario);
+    color: var(--color-texto-claro);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--color-primario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px; /* Ajusta según el tamaño de tu logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--color-texto-claro);
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primario);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.activo::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.activo {
+    color: var(--color-primario);
+}
+
+---
+
+/* BANNER */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Altura del banner */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-secundario); /* Por si la imagen tarda en cargar */
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+    z-index: 1;
+    filter: brightness(0.6); /* Oscurece la imagen para que el texto resalte */
+}
+
+.texto-banner {
+    position: relative;
+    z-index: 2;
+    color: var(--color-texto-claro);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+    border-radius: 8px;
+}
+
+.texto-banner h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.texto-banner p {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+---
+
+/* SECCIONES GENERALES */
+.seccion {
+    padding: 60px 0;
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+.seccion:nth-child(odd) { /* Alternar color de fondo para contraste */
+    background-color: var(--color-terciario);
+}
+
+/* SOBRE NOSOTROS */
+.sobre-nosotros p {
+    font-size: 1.1em;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+---
+
+/* GRIDS (CLASES Y BLOG) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.clase, .blog-home article {
+    background-color: var(--color-terciario);
+    border: 1px solid var(--color-primario); /* Borde primario más fuerte */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clase:hover, .blog-home article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.clase img, .blog-home article img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.clase h3, .blog-home article h3 {
+    color: var(--color-primario); /* Títulos de tarjeta en rojo */
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.clase p, .blog-home article p {
+    font-size: 0.95em;
+    padding: 0 15px;
+    color: var(--color-texto-claro);
+}
+
+.blog-home article h3 a {
+    color: var(--color-primario);
+}
+
+.blog-home article h3 a:hover {
+    color: #8C0B08;
+}
+
+---
+
+/* CONTACTO RÁPIDO */
+.contacto-home {
+    text-align: center;
+    background-color: var(--color-secundario);
+    padding-bottom: 60px;
+}
+
+.contacto-home p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contacto-home form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contacto-home input[type="text"],
+.contacto-home input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-detalles); /* Borde más sutil para los inputs */
+    background-color: var(--color-terciario);
+    color: var(--color-texto-claro);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contacto-home input::placeholder {
+    color: rgba(240, 240, 240, 0.7);
+}
+
+.contacto-home button {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contacto-home button:hover {
+    background-color: #8C0B08; /* Rojo más oscuro al pasar el ratón */
+    transform: scale(1.05);
+}
+
+---
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: var(--color-terciario);
+    color: var(--color-texto-claro);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 3px solid var(--color-primario);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-content p {
+    font-size: 0.9em;
+}
+
+.redes a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.redes img {
+    height: 30px; /* Tamaño de los iconos de redes sociales */
+    filter: invert(100%); /* Hace que los iconos SVG sean blancos */
+    transition: filter 0.3s ease;
+}
+
+.redes img:hover {
+    filter: invert(10%) sepia(90%) saturate(6000%) hue-rotate(350deg) brightness(90%) contrast(100%); /* Simula un rojo al pasar el ratón en iconos blancos */
+}
+
+---
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .contenedor-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .banner {
+        height: 400px;
+    }
+
+    .texto-banner h1 {
+        font-size: 2.5em;
+    }
+
+    .texto-banner p {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clase, .blog-home article {
+        margin: 0 20px; /* Añade margen a los lados en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 300px;
+    }
+
+    .texto-banner h1 {
+        font-size: 2em;
+    }
+
+    .texto-banner p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .logo {
+        height: 50px;
+    }
+}
