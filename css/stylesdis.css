@@ -1,0 +1,88 @@
+/* Estilos específicos para páginas de Disciplinas*/
+
+.dis-header {
+    text-align: center;
+    padding: 60px 0 20px;
+}
+
+.dis-header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+
+/* Caja de descripción centrada */
+.dis-description-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.dis-description-box {
+    width: 80%;
+    max-width: 900px;
+    border: 2px solid var(--color-detalles);
+    padding: 40px;
+    background-color: var(--color-primario);
+    text-align: center;
+}
+
+.dis-description-box p {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Carrusel de fotos centrado */
+.dis-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto 80px;
+}
+
+.dis-carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    max-width: 1100px;
+    padding: 10px;
+}
+
+.dis-photo-card {
+    min-width: 320px;
+    height: 450px; /* Fotos verticales como en tu mockup */
+    border: 2px solid var(--color-detalles);
+    flex-shrink: 0;
+}
+
+.dis-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dis-btn {
+    background: none;
+    border: none;
+    color: var(--color-detalles);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dis-btn:hover {
+    color: var(--color-secundario);
+    transform: scale(1.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .dis-header h1 { font-size: 2.5rem; }
+    .dis-description-box { width: 95%; padding: 20px; }
+    .dis-photo-card { min-width: 280px; height: 380px; }
+    .dis-carousel-track { overflow-x: auto; }
+    .dis-btn { display: none; }
+}

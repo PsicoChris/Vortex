@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxeo - Vortex</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/stylesdis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo-link">
+                <img src="../assets/img/logo.jpeg" alt="Logo" class="main-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">inicio</a></li>
+                    <li><a href="../sobre-nosotros.html">sobre nosotros</a></li>
+                    <li><a href="../disciplinas.html">disciplinas</a></li>
+                    <li><a href="../entrenadores.html">entrenadores</a></li>
+                    <li><a href="../contacto.html">contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="dis-header">
+            <h1>Boxeo</h1>
+        </section>
+
+        <section class="dis-description-container">
+            <div class="dis-description-box">
+                <p>El Boxeo es un arte marcial y deporte de combate que consiste en golpear a un oponente dentro de un ring con los puños, mientras se protege uno mismo con los guantes. Es una disciplina que requiere fuerza, resistencia, velocidad y habilidad técnica.</p>
+            </div>
+        </section>
+
+        <section class="dis-carousel-wrapper">
+            <button class="dis-btn" id="prevDis"><i class="fas fa-chevron-left"></i></button>
+            <div class="dis-carousel-track" id="trackDis">
+                <div class="dis-photo-card"><img src="../assets/img/boxeo1.jpg" alt="Boxeo Action"></div>
+                <div class="dis-photo-card"><img src="../assets/img/boxeo2.jpg" alt="Boxeo Training"></div>
+                <div class="dis-photo-card"><img src="../assets/img/boxeo3.jpg" alt="Boxeo Roll"></div>
+                <div class="dis-photo-card"><img src="../assets/img/boxeo4.jpg" alt="Boxeo Class"></div>
+            </div>
+            <button class="dis-btn" id="nextDis"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+        <section class="cta-banner">
+            <div class="banner-text">
+                <p>¡Tu camino hacia el dominio de <strong>Artes Marciales</strong>!</p>
+                <span>¡Únete a la familia hoy mismo!</span>
+            </div>
+            <div class="banner-button">
+                <a href="../contacto.html">CONTACTA AHORA</a>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/573226492025" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer><h2>FOOTER</h2></footer>
+
+    <script>
+        const track = document.getElementById('trackDis');
+        document.getElementById('nextDis').onclick = () => track.scrollLeft += 350;
+        document.getElementById('prevDis').onclick = () => track.scrollLeft -= 350;
+    </script>
+</body>
+</html>
