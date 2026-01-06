@@ -2,13 +2,13 @@ const track = document.getElementById('carouselTrack');
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
 
-// Cantidad de pixeles a desplazar (ancho de tarjeta + gap)
-const scrollAmount = 320; 
-
 nextBtn.addEventListener('click', () => {
-    track.scrollLeft += scrollAmount;
+    // Desplaza el ancho de una tarjeta + el gap
+    const cardWidth = track.querySelector('.discipline-card').offsetWidth + 25;
+    track.scrollLeft += cardWidth;
 });
 
 prevBtn.addEventListener('click', () => {
-    track.scrollLeft -= scrollAmount;
+    const cardWidth = track.querySelector('.discipline-card').offsetWidth + 25;
+    track.scrollLeft -= cardWidth;
 });
